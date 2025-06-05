@@ -3,7 +3,7 @@ import Call from "./apicall";
 
 export default function FavoriteMovies() {
     const [favoriteMovies, setFavoriteMovies] = useState([]);
-
+    const [loading, setLoading] = useState(1);
     useEffect(() => {
         const fetchFavorites = async () => {
             const saved = localStorage.getItem("fav");
@@ -27,29 +27,36 @@ export default function FavoriteMovies() {
             }
 
             setFavoriteMovies(movies);
+            setLoading(0);
         };
 
         fetchFavorites();
+        
     }, []);
 
     return (
         <section id="favorites">
             <h2>⭐ Favorites</h2>
             <div className="movie-grid" id="favoritesList">
-                {favoriteMovies.length > 0 ? (
-                    favoriteMovies.map((movie) => (
-                        <div className="movie-card" key={movie.imdbID}>
-                            <img src={movie.Poster} alt="Movie Poster" className="poster" />
-                            <div className="movie-details">
-                                <h3 className="title">{movie.Title}</h3>
-                                <p><strong>Release Date:</strong> {movie.Year}</p>
-                                <p><strong>Genre:</strong> {movie.Genre}</p>
-                                <p><strong>Rating:</strong> ⭐ {movie.imdbRating || 'N/A'}</p>
-                            </div>
-                        </div>
-                    ))
+                {loading ? (
+                    <p>loading....</p>
                 ) : (
-                    <p>No favorite movies found.</p>
+                    favoriteMovies.length > 0 ? (
+                        favoriteMovies.map((movie) => (
+                            <div className="movie-card" key={movie.imdbID}>
+                                <img src={movie.Poster} alt="Movie Poster" className="poster" />
+                                <div className="movie-details">
+                                    <h3 className="title">{movie.Title}</h3>
+                                    <p><strong>Release Date:</strong> {movie.Year}</p>
+                                    <p><strong>Genre:</strong> {movie.Genre}</p>
+                                    <p><strong>Rating:</strong> ⭐ {movie.imdbRating || 'N/A'}</p>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No favorite movies found.</p>
+                    )
+
                 )}
             </div>
         </section>

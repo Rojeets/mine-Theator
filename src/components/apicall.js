@@ -1,7 +1,7 @@
 async function Call(title, type, i) {
     try {
         const apiKey = '9eb5f0aa';
-        const apiUrl = 'http://www.omdbapi.com/';
+        const apiUrl = 'https://www.omdbapi.com/';
         if (!apiKey) {
             throw new Error('Missing REACT_APP_OMDB_API_KEY environment variable');
         }

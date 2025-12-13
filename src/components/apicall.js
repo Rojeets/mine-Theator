@@ -1,6 +1,7 @@
 async function Call(title, type, i) {
     try {
         const apiKey = '9eb5f0aa';
+        const apiUrl = 'http://www.omdbapi.com/';
         if (!apiKey) {
             throw new Error('Missing REACT_APP_OMDB_API_KEY environment variable');
         }
@@ -8,7 +9,7 @@ async function Call(title, type, i) {
         const query = `${title ? `&s=${encodeURIComponent(title)}` : `&i=${encodeURIComponent(i)}`}${type ? `&type=${encodeURIComponent(type)}` : ``}`;
         // Use proxy (defined in package.json) with a relative path
         // const response = await fetch(`/\u003Fapikey=${apiKey}${query}`);
-        const response = await fetch(`http://www.omdbapi.com/?apikey=9eb5f0aa${title ? `&s=${encodeURIComponent(title)}` : `&i=${encodeURIComponent(i)}`}${type ? `&type=${encodeURIComponent(type)}` : ``}`);
+        const response = await fetch(`${apiUrl}?apikey=${apiKey}${query}`);
 
         if (!response.ok) {
             throw new Error('Network response was not ok');

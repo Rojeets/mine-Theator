@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mine-Theator/static/css/main.b1f1f591.css",
-    "main.js": "/mine-Theator/static/js/main.c8a4090f.js",
+    "main.js": "/mine-Theator/static/js/main.4d72a068.js",
     "static/js/453.9dc83fd9.chunk.js": "/mine-Theator/static/js/453.9dc83fd9.chunk.js",
     "index.html": "/mine-Theator/index.html",
     "main.b1f1f591.css.map": "/mine-Theator/static/css/main.b1f1f591.css.map",
-    "main.c8a4090f.js.map": "/mine-Theator/static/js/main.c8a4090f.js.map",
+    "main.4d72a068.js.map": "/mine-Theator/static/js/main.4d72a068.js.map",
     "453.9dc83fd9.chunk.js.map": "/mine-Theator/static/js/453.9dc83fd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1f1f591.css",
-    "static/js/main.c8a4090f.js"
+    "static/js/main.4d72a068.js"
   ]
 }
